@@ -62,7 +62,7 @@ describe('test the `hobbits` model', () => {
 
 describe('test server endpoints', () => {
     test('call the `up` endpoint', async() => {
-        await request(server).get('/');
-        expect(1).toBe(0);
+        const result = await request(server).get('/');
+        expect(result.status).toBe(200);
     });
 });
