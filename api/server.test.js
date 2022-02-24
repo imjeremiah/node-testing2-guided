@@ -88,7 +88,7 @@ describe('test server endpoints', () => {
     });
 
     test('[POST] /hobbits', async () => {
-        let result = await request(server).post('/hobbits/', { name: 'Smaug' });
+        let result = await request(server).post('/hobbits', { name: 'Smaug' });
         expect(result.status).toBe(201);
 
         result = await Hobbits.getById(1);
