@@ -60,6 +60,9 @@ describe('test the `hobbits` model', () => {
 });
 
 
-describe('test server endpoints', async () => {
-    qwerqwerqwer()
+describe('test server endpoints', () => {
+    test('call the `up` endpoint', async() => {
+        await request(server).get('/');
+        expect(1).toBe(0);
+    });
 });
