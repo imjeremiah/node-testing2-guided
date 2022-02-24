@@ -55,4 +55,10 @@ describe('test the `hobbits` model', () => {
         result = await Hobbits.getById(result.id);
         expect(result).not.toBeDefined();
     });
-})
+});
+
+
+describe('test server endpoints', () => {
+    // send some http request
+    // check result from http request
+});
