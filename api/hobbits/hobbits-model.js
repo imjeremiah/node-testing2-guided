@@ -34,5 +34,5 @@ async function remove(id) {
     .where('id', id)
     .del();
   
-    return result;
+  return result;
 }
