@@ -97,10 +97,15 @@ describe('test server endpoints', () => {
         expect(result.name).toBe('Smaug');
     });
 
-    // test('[DELETE] /hobbits/:id', async () => {
-    //     expect(true).toBe(false)
-    // });
-    
+    test('[DELETE] /hobbits/:id', async () => {
+        let {id} = await Hobbits.insert({ name: 'Pippin' });
+        let result = await request(server).delete('/hobbits/' + id);
+        expect(result.status).toEqual(200);
+        expect(result.body).toEqual({ name: 'Pippin', id: 1 });
+        const hobbits = await db('hobbits');
+        expect(hobbits).toHaveLength(0);
+    });
+
     // test('[PUT] /hobbits/:id', async () => {
     //     expect(true).toBe(false)
     // });
