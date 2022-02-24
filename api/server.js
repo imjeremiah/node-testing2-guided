@@ -21,7 +21,10 @@ server.get("/hobbits", (req, res) => {
 });
 
 server.get("/hobbits/:id", (req, res) => {
-  res.end()
+  Hobbits.getById(req.params.id)
+    .then(hobbit => {
+      res.status(200).json(hobbit)
+    })
 });
 
 server.post("/hobbits", (req, res) => {
