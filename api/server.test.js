@@ -1,5 +1,7 @@
 const Hobbits = require('./hobbits/hobbits-model');
 const db = require('../data/dbConfig');
+const request = require('supertest');
+const server = require('./server');
 
 beforeAll(async () => {
     await db.migrate.rollback();
@@ -58,7 +60,6 @@ describe('test the `hobbits` model', () => {
 });
 
 
-describe('test server endpoints', () => {
-    // send some http request
-    // check result from http request
+describe('test server endpoints', async () => {
+    qwerqwerqwer()
 });
