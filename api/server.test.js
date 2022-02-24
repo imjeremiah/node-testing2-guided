@@ -79,8 +79,6 @@ describe('test server endpoints', () => {
         expect(result.body).toHaveLength(1);
     });
 
-
-
     test('[GET] /hobbits/:id', async () => {
         let result = await Hobbits.insert({ name: 'Meriadoc' });
         result = await request(server).get('/hobbits/' + result.id);
@@ -112,7 +110,7 @@ describe('test server endpoints', () => {
             .put('/hobbits/' + id)
             .send({ name: 'Pippin2' });
         expect(result.body).toEqual({ name: 'Pippin2', id });
-        let hobbit = Hobbits.getById(id);
+        let hobbit = await Hobbits.getById(id);
         expect(hobbit).toEqual({ name: 'Pippin2', id })
     });
 });
