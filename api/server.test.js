@@ -38,13 +38,11 @@ describe('test the `hobbits` model', () => {
     });
 
     test('update some hobbits', async () => {
-        // let result = await Hobbits.insert({ name: 'Frodo' });
-        // expect(result).toEqual({ name: 'Frodo', id: 1 });
-        // let hobbits = await db('hobbits');
-        // expect(hobbits).toHaveLength(1);
+        const [id] = await db('hobbits').insert({ name: 'Smeagol' });
+        let result = await Hobbits.update(id, { name: 'Gollum' });
 
-        // await Hobbits.insert({ name: 'Samwise' });
-        // hobbits = await db('hobbits');
-        // expect(hobbits).toHaveLength(2);
+        expect(result).toEqual({ id, name: 'Gollum' });
+        result = await Hobbits.getById(id);
+        expect(result).toEqual({ id, name: 'Gollum' });
     });
 })
