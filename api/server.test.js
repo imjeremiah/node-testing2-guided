@@ -20,5 +20,10 @@ describe('test the `hobbits` model', () => {
         expect(hobbits).toHaveLength(0);
     });
 
-    
+    test('hobbits get inserted', async () => {
+        let result = await Hobbits.insert({ name: 'Frodo' });
+        expect(result).toEqual({ name: 'Frodo', id: 1 });
+        const hobbits = await db('hobbits');
+        expect(hobbits).toHaveLength(1);
+    })
 })
