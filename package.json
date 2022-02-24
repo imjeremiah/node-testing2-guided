@@ -7,7 +7,7 @@
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
     "ketchup": "git fetch && git reset --hard origin/lecture",
-    "test": "jest"
+    "test": "jest --verbose --watch --runInBand"
   },
   "dependencies": {
     "dotenv": "^14.3.2",
