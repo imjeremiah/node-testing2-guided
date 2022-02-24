@@ -83,7 +83,7 @@ describe('test server endpoints', () => {
 
     test('[GET] /hobbits/:id', async () => {
         let result = await Hobbits.insert({ name: 'Meriadoc' });
-        result = await request(server).get('/hobbits' + result.id);
+        result = await request(server).get('/hobbits/' + result.id);
         expect(result.name).toBe('Meriadoc');
     });
     // test('[POST] /hobbits', async () => {
