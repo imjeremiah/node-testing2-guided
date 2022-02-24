@@ -42,7 +42,10 @@ server.delete("/hobbits/:id", (req, res) => {
 });
 
 server.put("/hobbits/:id", (req, res) => {
-  res.end()
+  Hobbits.update(req.params.id, req.body)
+    .then(hobbit => {
+      res.json(hobbit)
+    });
 });
 
 module.exports = server;
