@@ -36,4 +36,15 @@ describe('test the `hobbits` model', () => {
         const result = await Hobbits.getById(id);
         expect(result).toHaveProperty('name', 'Bilbo');
     });
+
+    test('update some hobbits', async () => {
+        // let result = await Hobbits.insert({ name: 'Frodo' });
+        // expect(result).toEqual({ name: 'Frodo', id: 1 });
+        // let hobbits = await db('hobbits');
+        // expect(hobbits).toHaveLength(1);
+
+        // await Hobbits.insert({ name: 'Samwise' });
+        // hobbits = await db('hobbits');
+        // expect(hobbits).toHaveLength(2);
+    });
 })
