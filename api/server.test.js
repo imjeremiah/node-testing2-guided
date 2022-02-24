@@ -25,5 +25,5 @@ describe('test the `hobbits` model', () => {
         expect(result).toEqual({ name: 'Frodo', id: 1 });
         const hobbits = await db('hobbits');
         expect(hobbits).toHaveLength(1);
-    })
+    });
 })
