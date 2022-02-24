@@ -35,7 +35,10 @@ server.post("/hobbits", (req, res) => {
 });
 
 server.delete("/hobbits/:id", (req, res) => {
-  res.end()
+  Hobbits.remove(req.params.id)
+    .then(hobbit => {
+      res.json(hobbit)
+    });
 });
 
 server.put("/hobbits/:id", (req, res) => {
