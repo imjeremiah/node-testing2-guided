@@ -86,9 +86,15 @@ describe('test server endpoints', () => {
         result = await request(server).get('/hobbits/' + result.id);
         expect(result.body.name).toBe('Meriadoc');
     });
+
     test('[POST] /hobbits', async () => {
-        expect(true).toBe(false)
+        let result = await request(server).post('/hobbits/', { name: 'Smaug' });
+        expect(result.status).toBe(201);
+
+        result = await Hobbits.getById(1);
+        expect(result.name).toBe('Smaug');
     });
+
     // test('[DELETE] /hobbits/:id', async () => {
     //     expect(true).toBe(false)
     // });
