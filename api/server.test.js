@@ -64,5 +64,7 @@ describe('test server endpoints', () => {
     test('call the `up` endpoint', async() => {
         const result = await request(server).get('/');
         expect(result.status).toBe(200);
+        expect(result.body).toEqual({ api: "up" });
+
     });
 });
