@@ -46,8 +46,13 @@ describe('test the `hobbits` model', () => {
         expect(result).toEqual({ id, name: 'Gollum' });
     });
 
-    test('hobbit removal', () => {
+    test('hobbit removal', async () => {
         let result = await Hobbits.insert({ name: 'Meriadoc' });
-        
+        result = await Hobbits.getById(result.id);
+        expect(result).toHaveProperty('name', 'Meriadoc');
+        result = await Hobbits.remove(result.id);
+        expect(result).toEqual({ id: 1, name: 'Meriadoc' });
+        result = await Hobbits.getById(result.id);
+        expect(result).not.toBeDefined();
     });
 })
