@@ -13,12 +13,12 @@ function getAll() {
 }
 
 function getById(id) {
-  return null
+  return db('hobbits').where('id', id).first();
 }
 
 async function insert(hobbit) {
   const [id] = await db('hobbits').insert(hobbit);
-  return db('hobbits').where('id', id).first();
+  return getById(id);
 }
 
 async function update(id, changes) {
