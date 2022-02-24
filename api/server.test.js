@@ -13,3 +13,10 @@ beforeEach(async () => {
 test('verify we are using the correct environment', ()  => {
     expect(process.env.NODE_ENV).toBe('testing');
 });
+
+describe('test the `hobbits` model', () => {
+    test('the table is empty', async () => {
+        const hobbits = await db('hobbits');
+        expect(hobbits).toHaveLength(0);
+    });
+})
