@@ -109,7 +109,7 @@ describe('test server endpoints', () => {
     test('[PUT] /hobbits/:id', async () => {
         let {id} = await Hobbits.insert({ name: 'Pippin1' });
         let result = await request(server)
-            .update('/hobbits/' + id)
+            .put('/hobbits/' + id)
             .send({ name: 'Pippin2' });
         expect(result.body).toEqual({ name: 'Pippin2', id });
         let hobbit = Hobbits.getById(id);
