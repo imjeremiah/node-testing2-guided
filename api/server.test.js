@@ -86,9 +86,9 @@ describe('test server endpoints', () => {
         result = await request(server).get('/hobbits/' + result.id);
         expect(result.body.name).toBe('Meriadoc');
     });
-    // test('[POST] /hobbits', async () => {
-    //     expect(true).toBe(false)
-    // });
+    test('[POST] /hobbits', async () => {
+        expect(true).toBe(false)
+    });
     // test('[DELETE] /hobbits/:id', async () => {
     //     expect(true).toBe(false)
     // });
