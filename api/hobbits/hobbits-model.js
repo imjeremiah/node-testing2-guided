@@ -22,7 +22,9 @@ async function insert(hobbit) {
 }
 
 async function update(id, changes) {
-  return null
+  const [id] = await db('hobbits')
+    .update({ name: hobbit.name })
+    .where(); 
 }
 
 function remove(id) {
