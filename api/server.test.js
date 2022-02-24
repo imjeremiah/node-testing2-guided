@@ -61,10 +61,14 @@ describe('test the `hobbits` model', () => {
 
 
 describe('test server endpoints', () => {
-    test('call the `up` endpoint', async() => {
+    test('call the `up` endpoint', async () => {
         const result = await request(server).get('/');
         expect(result.status).toBe(200);
         expect(result.body).toEqual({ api: "up" });
+    });
 
+    test('[GET] /hobbits', async () => {
+        const result = await request(server).get('/hobbits');
+        expect(result.status).toBe(200);
     });
 });
