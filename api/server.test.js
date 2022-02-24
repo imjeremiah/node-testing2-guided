@@ -45,4 +45,9 @@ describe('test the `hobbits` model', () => {
         result = await Hobbits.getById(id);
         expect(result).toEqual({ id, name: 'Gollum' });
     });
+
+    test('hobbit removal', () => {
+        let result = await Hobbits.insert({ name: 'Meriadoc' });
+        
+    });
 })
