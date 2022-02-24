@@ -78,4 +78,21 @@ describe('test server endpoints', () => {
         result = await request(server).get('/hobbits');
         expect(result.body).toHaveLength(1);
     });
+
+
+
+    test('[GET] /hobbits/:id', () => {
+        expect(true).toBe(false)
+    });
+    test('[POST] /hobbits', () => {
+        expect(true).toBe(false)
+    });
+    test('[DELETE] /hobbits/:id', () => {
+        expect(true).toBe(false)
+    });
+    test('[PUT] /hobbits/:id', () => {
+        expect(true).toBe(false)
+    });
+
+
 });
