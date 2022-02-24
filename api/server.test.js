@@ -68,9 +68,14 @@ describe('test server endpoints', () => {
     });
 
     test('[GET] /hobbits', async () => {
-        const result = await request(server).get('/hobbits');
+        let result = await request(server).get('/hobbits');
         expect(result.status).toBe(200);
         expect(result.body).toBeInstanceOf(Array);
         expect(result.body).toHaveLength(0);
+
+        await Hobbits.insert({ name: 'Meriadoc' });
+
+        result = await request(server).get('/hobbits');
+        expect(result.body).toHaveLength(1);
     });
 });
